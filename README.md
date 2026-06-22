@@ -99,7 +99,11 @@ It recomputes the HMAC, rejects deliveries whose timestamp is too old (replay pr
 
 ## Deliberately out of scope (v1 roadmap)
 
-Circuit breaking and auto-disabling chronically failing endpoints; per-destination concurrency and noisy-neighbor isolation; ordering guarantees (subscribers should order by timestamp); async delivery for throughput; multi-tenant accounts.
+- Circuit breaking and auto-disabling chronically failing endpoints
+- Per-destination concurrency and noisy-neighbor isolation
+- Ordering guarantees (subscribers should order by timestamp)
+- Async delivery for throughput
+- Multi-tenant accounts
 
 ## Tech stack
 
