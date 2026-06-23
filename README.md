@@ -6,6 +6,18 @@ Reliable webhook delivery: the layer between "something happened in my app" and 
 
 Subscribers register an endpoint (a URL, the event types they care about, and a signing secret). When the app emits an event, the system fans it out to every matching subscriber and delivers it over HTTP with at-least-once guarantees: failed deliveries retry with exponential backoff and jitter, exhausted ones are dead-lettered, and every attempt is logged. Each delivery is HMAC-signed so the receiver can verify it is authentic and not replayed.
 
+
+## See it work
+
+A signed webhook delivered to a subscriber, with the HMAC signature, timestamp, and delivery id headers:
+
+![A signed webhook delivery received by a subscriber](images/delivery-received.png)
+
+A clean single delivery, ingested and delivered with a 200:
+
+![Clean single delivery run](images/clean-delivery-run.png)
+
+
 ## Architecture
 
 ```
